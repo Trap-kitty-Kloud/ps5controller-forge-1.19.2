@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT"
+[[mods]]
+modId="ps5controller"
+version="${file.jarVersion}"
+displayName="PS5 Controller Support"
+displayURL=""
+credits="LWJGL3/GLFW"
+authors="ChatGPT"
+description="""
+Adds basic PlayStation 5 (DualSense) gamepad input using GLFW. Keyboard/mouse remain usable.
+Includes optional "extra key" press mapping for mod hotkeys (e.g., Tensura), by toggling any KeyMapping with a matching key code.
+"""
+
+[[dependencies.ps5controller]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.ps5controller]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="CLIENT"
