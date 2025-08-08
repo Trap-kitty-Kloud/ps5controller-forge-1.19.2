@@ -1,0 +1,21 @@
+name: Build PS5 Controller Mod
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Install Gradle (CLI)
+        run: choco install gradle -y
+      - name: Build
+        run: gradle build --no-daemon
+      - name: Upload jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps5controller-jar
+          path: build/libs/*.jar
